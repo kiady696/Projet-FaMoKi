@@ -9,6 +9,10 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="FaMoKi!" />
+
+      <!-- Juste pour tester vuetify -->
+      <v-file-input label="File input example"></v-file-input>
+      
     </div>
   </header>
 
