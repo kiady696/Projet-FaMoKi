@@ -4,6 +4,10 @@ import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
+
+  <!-- Pour inclure les logos MaterialUI -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
+
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -12,7 +16,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
       <!-- Juste pour tester vuetify -->
       <v-file-input label="File input example"></v-file-input>
-      
+
     </div>
   </header>
 
