@@ -1,22 +1,5 @@
-
-<script >
-import ModelSelection from './components/ModelSelection.vue';
-
-export default {
-      data() {
-        return {
-          
-        }
-      },
-components : {
-          ModelSelection
-        }
-      }
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+
 
     <div class="wrapper">
 
@@ -29,36 +12,28 @@ components : {
     </div>
   </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+
+  <div>
+    <upload_csv v-on:data="dataframe=$event"/>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+<script>
+import Upload_csv from './components/upload_csv.vue';
+import upload_csv from './components/upload_csv.vue';
+import ModelSelection from './components/ModelSelection.vue';
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+export default {
+  data() {
+    return {
+      dataframe:null
+    }
+  },
+  components : {
+          ModelSelection, 
+           upload_csv
   }
 }
-</style>
+</script>
