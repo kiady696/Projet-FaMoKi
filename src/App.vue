@@ -1,55 +1,42 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
 
 <template>
 
   <!-- Pour inclure les logos MaterialUI -->
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
 
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+
+
 
     <div class="wrapper">
-      <HelloWorld msg="FaMoKi!" />
-
       <!-- Juste pour tester vuetify -->
-      <v-file-input label="File input example"></v-file-input>
-
+      <v-file-input label="File input exemple"></v-file-input>
     </div>
-  </header>
 
   <main>
-    <TheWelcome />
+    <ModelSelection v-bind:y="targetY" v-bind:filename="filename" />
   </main>
+  <div>
+    <upload_csv v-on:data="dataframe=$event"/>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+<script>
+import upload_csv from './components/upload_csv.vue';
+import ModelSelection from './components/ModelSelection.vue';
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+export default {
+  data() {
+    return {
+      dataframe:null, 
+      "filename": "TEST.csv",//récupère ce que fares envoie
+      "targetY": "variety"// récupère ce que fares envoie
+    }
+  },
+  components : {
+          ModelSelection, 
+          upload_csv
   }
 }
-</style>
+</script>
