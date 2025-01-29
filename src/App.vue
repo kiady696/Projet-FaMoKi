@@ -1,6 +1,17 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
+<script >
+import ModelSelection from './components/ModelSelection.vue';
+
+export default {
+      data() {
+        return {
+          
+        }
+      },
+components : {
+          ModelSelection
+        }
+      }
 </script>
 
 <template>
@@ -8,7 +19,7 @@ import TheWelcome from './components/TheWelcome.vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="FaMoKi!" />
+      <ModelSelection  />
     </div>
   </header>
 
