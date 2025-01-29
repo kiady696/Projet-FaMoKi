@@ -1,8 +1,18 @@
-
-
-
-
 <template>
+
+
+    <div class="wrapper">
+
+      <ModelSelection  />
+      <HelloWorld msg="FaMoKi!" />
+
+      <!-- Juste pour tester vuetify -->
+      <v-file-input label="File input example"></v-file-input>
+     
+    </div>
+  </header>
+
+
   <div>
     <upload_csv v-on:data="dataframe=$event"/>
   </div>
@@ -13,19 +23,17 @@
 <script>
 import Upload_csv from './components/upload_csv.vue';
 import upload_csv from './components/upload_csv.vue';
-export default {
+import ModelSelection from './components/ModelSelection.vue';
 
+export default {
   data() {
     return {
       dataframe:null
-    };
+    }
   },
-
-  methods: {
-  },
-  components: {
-    upload_csv
-    
+  components : {
+          ModelSelection, 
+           upload_csv
   }
 }
 </script>
