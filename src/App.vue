@@ -1,16 +1,13 @@
+
 <template>
 
 
     <div class="wrapper">
-
-      <ModelSelection  />
-
-      <!-- Juste pour tester vuetify -->
-      <v-file-input label="File input example"></v-file-input>
-     
     </div>
 
-
+  <main>
+    <ModelSelection v-bind:y="targetY" v-bind:filename="filename" />
+  </main>
   <div>
     <upload_csv v-on:data="dataframe=$event"/>
   </div>
@@ -26,7 +23,9 @@ import ModelSelection from './components/ModelSelection.vue';
 export default {
   data() {
     return {
-      dataframe:null
+      dataframe:null, 
+      "filename": "TEST.csv",//récupère ce que fares envoie
+      "targetY": "variety"// récupère ce que fares envoie
     }
   },
   components : {
