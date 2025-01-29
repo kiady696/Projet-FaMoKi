@@ -1,8 +1,15 @@
 
 <template>
 
+  <!-- Pour inclure les logos MaterialUI -->
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet">
+
+
+
 
     <div class="wrapper">
+      <!-- Juste pour tester vuetify -->
+      <v-file-input label="File input exemple"></v-file-input>
     </div>
 
   <main>
@@ -16,7 +23,6 @@
 
 
 <script>
-import Upload_csv from './components/upload_csv.vue';
 import upload_csv from './components/upload_csv.vue';
 import ModelSelection from './components/ModelSelection.vue';
 
@@ -30,7 +36,7 @@ export default {
   },
   components : {
           ModelSelection, 
-           upload_csv
+          upload_csv
   }
 }
 </script>
