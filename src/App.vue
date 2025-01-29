@@ -5,7 +5,8 @@ import ModelSelection from './components/ModelSelection.vue';
 export default {
       data() {
         return {
-          
+          "filename": "TEST.csv",//récupère ce que fares envoie
+          "targetY": "variety"// récupère ce que fares envoie
         }
       },
 components : {
@@ -19,12 +20,12 @@ components : {
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <ModelSelection  />
+      
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <ModelSelection v-bind:y="targetY" v-bind:filename="filename" />
   </main>
 </template>
 
