@@ -3,19 +3,26 @@
 <template>
     <div>
       <input type="file" @change="handleFileChange" />
-      <button @click="uploadFile">Uploader CSV</button>
-      <pre>{{ data }}</pre>
+      <button @click="uploadFile">Uploader CSV </button>
+      <pre>{{ data_df }}</pre>
     </div>
+
+    <pre></pre>
   </template>
   
   
   
   <script>
   export default {
+
+
+    emits:['data'],
+
+
     data() {
       return {
         file: null, // Stocke le fichier sélectionné
-        data: null, // Stocke les données du CSV après traitement
+        data_df: null, // Stocke les données du CSV après traitement
       };
     },
     methods: {
@@ -51,8 +58,9 @@
         })
   
         .then(data => {
-          this.data = data; // Stocke les données dans la variable `data`
+          this.data_df = data; // Stocke les données dans la variable `data`
           console.log(data); // Affiche les données dans la console
+          this.$emit('data',data)
         })
         .catch(error => {
           console.error(error); // Affiche l'erreur s'il y en a une
