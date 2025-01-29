@@ -51,6 +51,10 @@
       },
     },*/
     export default {
+      props: {
+        filename: "", //récupère la réponse de fares reçu dans l'app.vue
+        y: "",//récupère la réponse de fares reçu dans l'app.vue
+      },
   data() {
     return {
       models: ["random_forest", "xgboost"], // Liste des modèles disponibles
@@ -96,7 +100,12 @@
       xhr.send(JSON.stringify(payload));
     },*/
     // Appel à mon API
-      fetch(`/api/train_model`, {method : "POST"} )
+      fetch(`/api/train_model`, {method : "POST", 
+      body : {
+        TRUCBidule:this.filename, //Donne la réponse JSON reçu dans app.vue à python
+        target:this.y,//Donne la réponse JSON reçu dans app.vue à python
+      model: this.model}
+    } )
       .then(response => response.json())
       .then(data => {
           console.log(data);
